@@ -1,0 +1,18 @@
+# build output
+./app/dist/
+
+# dependencies
+./app/node_modules/
+
+# logs
+./app/npm-debug.log*
+./app/yarn-debug.log*
+./app/yarn-error.log*
+./app/pnpm-debug.log*
+
+# environment variables
+./app/.env
+./app/.env.production
+
+# macOS-specific files
+.DS_Store

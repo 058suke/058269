@@ -1,2 +1,4 @@
-# 058269_astro
-058269 made of Astro/
+# 058269 by Astro
+
+## このリポジトリは何？
+[058269](https://058suke.work/) をGatsbyからAstroへリプレイス。
