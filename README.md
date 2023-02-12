@@ -1,6 +1,6 @@
 # 058269 by Astro
 
-個人ブログ「[058269](https://058suke.work/) 」をGatsbyからAstroへリプレイス。
+個人ブログ「[058269](https://058suke.work/)」をGatsbyからAstroへリプレイス。
 
 ## 開発手順
 
@@ -19,8 +19,8 @@ docker-compose exec astro npx astro dev --host 0.0.0.0
 
 - SSG: [Astro](https://astro.build/)
 - theme: [Simple Blog](https://github.com/littlesticks/simple-blog-astro)
-
-
+- CI/CD: [GitHub Actions](https://github.com/058suke/058269_astro/actions/)
+  - Pull Request作成時に[Super Linter](https://github.com/marketplace/actions/super-linter)による静的コード解析を行っている。
 
 ### 参考リンク
 
@@ -35,3 +35,5 @@ docker-compose exec astro npx astro dev --host 0.0.0.0
 - [Dockerのマウント3種類についてわかったことをまとめる - Qiita](https://qiita.com/y518gaku/items/456f34c317a65a9dae86)
   - バインドマウント: ホストとコンテナのファイルを共有する。
   - ボリュームマウント: Docker管理のホスト上ファイルシステムに保存する。
+
+[![GitHub Super-Linter](https://github.com/058suke/058269_astro/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
