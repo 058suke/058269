@@ -1,0 +1,19 @@
+version: '3.2'
+services:
+  astro:
+    build:
+      context: .
+      dockerfile: ./node/Dockerfile
+    ports:
+      - '3000:3000'
+    init: true
+    tty: true
+    volumes:
+      - type: volume
+        source: node_modules
+        target: /home/node/058269/node_modules
+      - type: bind
+        source: ./app
+        target: /home/node/058269
+volumes:
+  node_modules:
