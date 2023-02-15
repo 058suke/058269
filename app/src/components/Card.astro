@@ -1,0 +1,44 @@
+---
+import Datetime from "./Datetime";
+import type { BlogFrontmatter } from "@content/_schemas";
+
+export interface Props {
+  href?: string;
+  frontmatter: BlogFrontmatter;
+  secHeading?: boolean;
+}
+
+const { href, frontmatter, secHeading = true } = Astro.props;
+---
+
+<li>
+  <a
+    href={href}
+    class="text-skin-accent inline-block text-lg font-medium decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
+  >
+    {
+      frontmatter.image && (
+        <picture>
+          <source srcset={`${frontmatter.image}.jpg`} type="image/jpg" />
+          <img
+            class="w-full rounded-lg"
+            loading="eager"
+            src={`${frontmatter.image}.jpg`}
+          />
+        </picture>
+      )
+    }
+    {
+      secHeading ? (
+        <h2 class="text-lg font-medium decoration-dashed hover:underline">
+          {frontmatter.title}
+        </h2>
+      ) : (
+        <h3 class="text-lg font-medium decoration-dashed hover:underline">
+          {frontmatter.title}
+        </h3>
+      )
+    }
+    <Datetime datetime={frontmatter.pubDatetime} />
+  </a>
+</li>

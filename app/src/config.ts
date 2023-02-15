@@ -11,10 +11,10 @@ export const SITE = {
 };
 
 export const LOGO_IMAGE = {
-  enable: false,
-  svg: true,
-  width: 216,
-  height: 46,
+  enable: true,
+  svg: false,
+  width: 100,
+  height: 100,
 };
 
 export const SOCIALS: SocialObjects = [
