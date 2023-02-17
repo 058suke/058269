@@ -1,5 +1,6 @@
 ---
 import { SITE } from "@config";
+import "../styles/github-markdown-custom.min.css";
 import "../styles/base.css";
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
@@ -29,7 +30,7 @@ const fallbackImageURL = new URL(SITE.ogImage, Astro.url.origin).href;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -100,6 +101,10 @@ const fallbackImageURL = new URL(SITE.ogImage, Astro.url.origin).href;
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css"
     />
 
     {

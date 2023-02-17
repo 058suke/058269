@@ -58,11 +58,7 @@ module.exports = {
       transparent: "transparent",
     },
     fontFamily: {
-      // mono: ["IBM Plex Mono", "monospace"],
-      // mono: ["fot-udkakugo-large-pr6n"],
       mono: ["-apple-system,BlinkMacSystemFont","Helvetica Neue","Segoe UI","Hiragino Kaku Gothic ProN","Hiragino Sans","Arial","Meiryo","sans-serif"]
     },
-    // },
   },
-  plugins: [require("@tailwindcss/typography")],
 };

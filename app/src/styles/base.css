@@ -48,7 +48,7 @@
     stroke-current stroke-2 opacity-90 group-hover:fill-transparent 
     sm:scale-110;
   }
-  .prose {
+  /* .prose {
     @apply prose-headings:!mb-3 prose-headings:!text-skin-base 
     prose-h3:italic prose-p:!text-skin-base 
     prose-a:!text-skin-base prose-a:!decoration-dashed prose-a:underline-offset-8
@@ -88,6 +88,24 @@
   }
   .prose h2#table-of-contents + p {
     @apply hidden;
+  } */
+  .markdown-body {
+		box-sizing: border-box;
+		min-width: 200px;
+		max-width: 980px;
+		margin: 0 auto;
+	}
+  .markdown-body ul {
+    @apply list-disc;
+  }
+  .markdown-body ul ul  {
+    list-style-type: circle;
+  }
+  .markdown-body ul ul ul {
+    list-style-type: square;
+  }
+  .markdown-body ol {
+    @apply list-decimal;
   }
 
   /* ===== scrollbar ===== */
