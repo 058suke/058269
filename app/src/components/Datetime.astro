@@ -1,0 +1,24 @@
+---
+export interface Props {
+  datetime: string | Date;
+  size?: "sm" | "lg";
+  className?: string;
+}
+
+const { datetime, size = "sm", className } = Astro.props;
+
+const postedDate = new Date(datetime);
+const date = postedDate
+  .toLocaleDateString("ja-JP", {
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+  })
+  .split("/")
+  .join(".");
+---
+
+<div class={`flex items-center opacity-80 ${className}`}>
+  <span class="sr-only">Posted on:</span>
+  <span class={`${size === "sm" ? "text-sm" : "text-base"}`}>{date}</span>
+</div>
