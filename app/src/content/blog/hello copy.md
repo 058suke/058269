@@ -1,7 +1,7 @@
 ---
 author: こば！
-pubDatetime: 2021-09-01T00:00:00Z
-title: ブログ始めました
+pubDatetime: 2023-02-10T00:00:00Z
+title: ブログ始めましたyo
 postSlug: hello
 image: "/images/blog/hello"
 featured: true

@@ -1,6 +1,6 @@
 ---
 author: こば！
-pubDatetime: 2021-09-01T00:00:00Z
+pubDatetime: 2022-07-01T00:00:00Z
 title: ブログ始めました
 postSlug: hello
 image: "/images/blog/hello"
