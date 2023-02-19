@@ -21,13 +21,12 @@ module.exports = {
     // Uncomment the following extend
     // if existing Tailwind color palette will be used
 
-    // extend: {
     textColor: {
       skin: {
         base: withOpacity("--color-text-base"),
         accent: withOpacity("--color-accent"),
         inverted: withOpacity("--color-fill"),
-        gray: "#4b5563",
+        gray: withOpacity("--color-text-gray"),
       },
     },
     backgroundColor: {
@@ -61,5 +60,26 @@ module.exports = {
     fontFamily: {
       mono: ["-apple-system,BlinkMacSystemFont","Helvetica Neue","Segoe UI","Hiragino Kaku Gothic ProN","Hiragino Sans","Arial","Meiryo","sans-serif"]
     },
+    extend: {
+      animation: {
+        "slide-in-title": "slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both",
+        "slide-in-date": "slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)  both",
+        "slide-in-tag": "slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)  both",
+        "slide-in-image": "slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s both",
+        "slide-in-article": "slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.6s both",
+      },
+      keyframes: {
+        "slide-in-bottom": {
+          "0%": {
+            transform: "translateY(20px)",
+            opacity: "0",
+          },
+          to: {
+            transform: "translateY(0)",
+            opacity: "1",
+          },
+        },
+      },
+    }
   },
 };
