@@ -1,0 +1,50 @@
+---
+#############################
+#############################
+## JavaScript Linter rules ##
+#############################
+#############################
+
+############
+# Env Vars #
+############
+env:
+  browser: true
+  es6: true
+  jest: true
+
+###############
+# Global Vars #
+###############
+globals:
+  Atomics: readonly
+  SharedArrayBuffer: readonly
+
+files:
+  - "*.astro"
+  - "*.ts"
+  - "*.tsx"
+  - "*.js"
+
+ignorePatterns:
+  - "!.*"
+  - "**/node_modules/.*"
+
+###############
+# Parser vars #
+###############
+parser: '@typescript-eslint/parser'
+parserOptions:
+  extraFileExtensions: [".astro", ".ts", ".tsx", ".js"]
+
+###########
+# Plugins #
+###########
+plugins:
+  - 'astro/recommended'
+  - 'tailwindcss/recommended'
+
+#########
+# Rules #
+#########
+rules: { }
