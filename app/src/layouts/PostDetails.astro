@@ -30,7 +30,7 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.svg`, Astro.url.origin)
     <Datetime
       datetime={pubDatetime}
       size="sm"
-      className="my-2 justify-center animate-slide-in-date"
+      className="my-2 justify-center animate-slide-in-subtitle"
     />
     <ul class="tags-container animate-slide-in-tag flex justify-center">
       {tags.map(tag => <Tag name={tag} />)}

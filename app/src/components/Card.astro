@@ -22,7 +22,7 @@ const { href, frontmatter, secHeading = true } = Astro.props;
           <source srcset={`${frontmatter.image}.jpg`} type="image/jpg" />
           <img
             class="duration-0 w-full rounded-2xl drop-shadow-lg"
-            loading="eager"
+            loading="lazy"
             src={`${frontmatter.image}.jpg`}
           />
         </picture>

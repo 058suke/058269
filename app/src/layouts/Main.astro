@@ -8,8 +8,8 @@ const { pageTitle, pageDesc } = Astro.props;
 ---
 
 <main id="main-content">
-  <h1>{pageTitle}</h1>
-  <p>{pageDesc}</p>
+  <h1 class="animate-slide-in-title">{pageTitle}</h1>
+  <p class="animate-slide-in-subtitle">{pageDesc}</p>
   <slot />
 </main>
 
@@ -21,9 +21,9 @@ const { pageTitle, pageDesc } = Astro.props;
     @apply mx-auto w-full max-w-3xl px-4 pb-12;
   }
   #main-content h1 {
-    @apply text-2xl font-semibold sm:text-3xl;
+    @apply text-2xl font-semibold;
   }
   #main-content p {
-    @apply mt-2 mb-6 italic;
+    @apply mt-2 mb-6 text-sm opacity-80;
   }
 </style>

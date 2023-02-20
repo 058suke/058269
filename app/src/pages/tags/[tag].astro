@@ -4,7 +4,7 @@ import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import Card from "@components/Card";
+import Card from "@components/Card.astro";
 import getUniqueTags from "@utils/getUniqueTags";
 import getPostsByTag from "@utils/getPostsByTag";
 import slugify from "@utils/slugify";
@@ -38,10 +38,10 @@ const tagPosts = getPostsByTag(posts, tag);
 <Layout title={`Tag:${tag} | ${SITE.title}`}>
   <Header />
   <Main
-    pageTitle={`Tag:${tag}`}
-    pageDesc={`All the articles with the tag "${tag}".`}
+    pageTitle={`#${tag}`}
+    pageDesc={`#${tag} のタグがついている記事 ${tagPosts.length}件`}
   >
-    <ul>
+    <ul class="animate-slide-in-contents grid gap-y-4 gap-x-8 sm:grid-cols-2">
       {
         tagPosts.map(({ data }) => (
           <Card href={`/posts/${slugify(data)}`} frontmatter={data} />
