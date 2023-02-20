@@ -5,7 +5,7 @@ import LinkButton from "./LinkButton.astro";
 import Logo from "./LogoImage.astro";
 
 export interface Props {
-  activeNav?: "posts" | "about" | "search";
+  activeNav?: "about" | "search";
 }
 
 const { activeNav } = Astro.props;
@@ -32,11 +32,6 @@ const { activeNav } = Astro.props;
           </div>
         </button>
         <ul id="menu-items" class="display-none sm:flex">
-          <li>
-            <a href="/posts" class={activeNav === "posts" ? "active" : ""}>
-              Posts
-            </a>
-          </li>
           <li>
             <a href="/about" class={activeNav === "about" ? "active" : ""}>
               About
@@ -95,10 +90,10 @@ const { activeNav } = Astro.props;
     @apply mx-auto flex max-w-3xl flex-col items-center justify-between sm:flex-row;
   }
   .top-nav-wrap {
-    @apply relative flex w-full items-start justify-between p-4 sm:items-center sm:py-8;
+    @apply relative flex w-full items-center justify-between p-4 sm:py-8;
   }
   .logo {
-    @apply absolute py-1 text-xl font-semibold sm:static sm:text-2xl;
+    @apply static py-1 text-xl font-semibold sm:text-2xl;
   }
   .hamburger-menu {
     @apply self-end p-2 sm:hidden;
@@ -111,7 +106,7 @@ const { activeNav } = Astro.props;
     @apply bg-skin-fill flex w-full flex-col items-center sm:ml-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0;
   }
   nav ul {
-    @apply mt-4 grid w-44 grid-cols-2 grid-rows-4 gap-y-2 gap-x-2 sm:mt-0 sm:ml-0 sm:w-auto sm:gap-y-0 sm:gap-x-5;
+    @apply mt-4 grid w-44 grid-cols-2 grid-rows-2 gap-y-2 gap-x-2 sm:mt-0 sm:ml-0 sm:w-auto sm:gap-y-0 sm:gap-x-5;
   }
   nav ul li {
     @apply col-span-2 flex items-center justify-center;
@@ -119,11 +114,11 @@ const { activeNav } = Astro.props;
   nav ul li a {
     @apply hover:text-skin-accent w-full px-4 py-3 text-center font-medium sm:my-0 sm:px-2 sm:py-1;
   }
-  nav ul li:nth-child(4) a {
+  nav ul li:nth-child(2) a {
     @apply w-auto;
   }
-  nav ul li:nth-child(4),
-  nav ul li:nth-child(5) {
+  nav ul li:nth-child(2),
+  nav ul li:nth-child(3) {
     @apply col-span-1;
   }
   nav a.active {
