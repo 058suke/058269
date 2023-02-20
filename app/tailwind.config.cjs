@@ -63,10 +63,12 @@ module.exports = {
     extend: {
       animation: {
         "slide-in-title": "slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both",
-        "slide-in-date": "slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)  both",
+        "slide-in-subtitle": "slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)  both",
         "slide-in-tag": "slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)  both",
         "slide-in-image": "slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s both",
         "slide-in-article": "slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.6s both",
+        "slide-in-contents": "slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s both",
+        "slide-in-bottoms": "slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.6s both"
       },
       keyframes: {
         "slide-in-bottom": {

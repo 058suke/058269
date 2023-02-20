@@ -2,13 +2,10 @@
 import { LOGO_IMAGE, SITE } from "@config";
 import Hr from "./Hr.astro";
 import LinkButton from "./LinkButton.astro";
-
-// import logoPNG from "/assets/logo.png";
-// import logoSVG from "/assets/logo.svg";
-import Logo from "./Logo.astro";
+import Logo from "./LogoImage.astro";
 
 export interface Props {
-  activeNav?: "posts" | "tags" | "about" | "search";
+  activeNav?: "posts" | "about" | "search";
 }
 
 const { activeNav } = Astro.props;
@@ -19,8 +16,7 @@ const { activeNav } = Astro.props;
   <div class="nav-container">
     <div class="top-nav-wrap">
       <a href="/" class="logo">
-        <Logo className="w-32 sm:w-48" />
-        <!-- <img src={logoSVG} alt="058269" class="w-32 sm:w-48" /> -->
+        <Logo className="logo w-32 sm:w-48" />
       </a>
       <nav id="nav-menu">
         <button
@@ -39,11 +35,6 @@ const { activeNav } = Astro.props;
           <li>
             <a href="/posts" class={activeNav === "posts" ? "active" : ""}>
               Posts
-            </a>
-          </li>
-          <li>
-            <a href="/tags" class={activeNav === "tags" ? "active" : ""}>
-              Tags
             </a>
           </li>
           <li>

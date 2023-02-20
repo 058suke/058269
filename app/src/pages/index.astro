@@ -17,7 +17,7 @@ const sortedPosts = getSortedPosts(posts);
   <Header />
   <main id="main-content">
     <section id="recent-posts">
-      <ul class="grid gap-y-4 gap-x-8 sm:grid-cols-2">
+      <ul class="animate-slide-in-contents grid gap-y-4 gap-x-8 sm:grid-cols-2">
         {
           sortedPosts.map(
             ({ data }, index) =>
@@ -31,7 +31,7 @@ const sortedPosts = getSortedPosts(posts);
           )
         }
       </ul>
-      <div class="all-posts-btn-wrapper">
+      <div class="all-posts-btn-wrapper animate-slide-in-bottoms">
         <LinkButton href="/posts">
           All Posts
           <svg xmlns="http://www.w3.org/2000/svg"
