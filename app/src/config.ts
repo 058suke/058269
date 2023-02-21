@@ -1,13 +1,14 @@
 import type { SocialObjects } from "./types";
 
 export const SITE = {
-  website: "https://astro-paper.pages.dev/",
-  author: "Sat Naing",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
-  title: "AstroPaper",
-  ogImage: "astropaper-og.jpg",
+  website: "https://058suke.work/",
+  author: "058suke",
+  desc: "福岡で働くWebエンジニアのブログ。",
+  title: "058269",
+  ogImage: "./assets/058269ogimage.png",
   lightAndDarkMode: true,
   postPerPage: 3,
+  favicon: "./assets/058269favicon.png"
 };
 
 export const LOGO_IMAGE = {
