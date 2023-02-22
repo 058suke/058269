@@ -54,6 +54,7 @@ module.exports = {
       skin: {
         base: withOpacity("--color-text-base"),
         accent: withOpacity("--color-accent"),
+        "nav-hover": withOpacity("--color-nav-hover"),
       },
       transparent: "transparent",
     },
