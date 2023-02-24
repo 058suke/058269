@@ -1,0 +1,50 @@
+# mainブランチへpushされたらビルド→S3にデプロイするタスク
+name: Deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    types: [ closed ]
+
+env:
+  project-name: 058269_astro
+
+jobs:
+  build:
+    name: Build & Deploy
+    runs-on: ubuntu-20.04
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.19.0
+          
+      - name: Install modules
+        run: npm install
+        
+      - name: Build
+        run: npm run build
+        
+      - name: Configure AWS Credenrtials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+          
+      - name: Deploy to S3
+        run: |
+          aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}
+          
+      - name: CloudFront Cache Clear
+        run: |
+          CFID=$(aws cloudfront list-distributions --query "DistributionList.Items[].{Id:Id,Origin:Origins.Items[0].DomainName}[?contains(Origin, '${{ secrets.AWS_S3_BUCKET_NAME }}.s3')] | [0].Id" | sed 's/"//g')
+          echo "aws cloudfront create-invalidation ${CFID}"
+          aws cloudfront create-invalidation --distribution-id ${CFID} --paths "/*"
