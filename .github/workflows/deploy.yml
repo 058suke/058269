@@ -16,9 +16,6 @@ jobs:
     name: Build & Deploy
     runs-on: ubuntu-20.04
     timeout-minutes: 5
-    defaults:
-      run:
-        working-directory: ./app
 
     steps:
       - name: Checkout
@@ -34,6 +31,7 @@ jobs:
         
       - name: Build
         run: npm run build
+        working-directory: ./app
         
       - name: Configure AWS Credenrtials
         uses: aws-actions/configure-aws-credentials@v1
@@ -45,6 +43,7 @@ jobs:
       - name: Deploy to S3
         run: |
           aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}
+        working-directory: ./app
           
       - name: CloudFront Cache Clear
         run: |
