@@ -16,6 +16,9 @@ jobs:
     name: Build & Deploy
     runs-on: ubuntu-20.04
     timeout-minutes: 5
+    defaults:
+      run:
+        working-directory: ./app
 
     steps:
       - name: Checkout
@@ -31,7 +34,6 @@ jobs:
         
       - name: Build
         run: npm run build
-        working-directory: ./app
         
       - name: Configure AWS Credenrtials
         uses: aws-actions/configure-aws-credentials@v1
