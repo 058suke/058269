@@ -59,7 +59,7 @@ module.exports = {
       transparent: "transparent",
     },
     fontFamily: {
-      mono: ["-apple-system,BlinkMacSystemFont","Helvetica Neue","Segoe UI","Hiragino Kaku Gothic ProN","Hiragino Sans","Arial","Meiryo","sans-serif"]
+      mono: ["YakuHanJPs","-apple-system,BlinkMacSystemFont","Helvetica Neue","Segoe UI","Hiragino Kaku Gothic ProN","Hiragino Sans","Arial","Meiryo","sans-serif"]
     },
     extend: {
       animation: {
