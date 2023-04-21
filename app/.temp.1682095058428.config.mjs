@@ -3,8 +3,9 @@ import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import remarkToc from "remark-toc";
 import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
+// import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import sitemap from "@astrojs/sitemap";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 // https://astro.build/config
 export default defineConfig({
@@ -33,19 +34,7 @@ export default defineConfig({
       [
         rehypeAutolinkHeadings,
         {
-          behavior: 'prepend',
-          properties: {
-            className: ['anchor'],
-            ariaHidden: true, 
-            tabIndex: -1
-          },
-          content: {
-            type: 'element',
-            tagName: 'span',
-            properties: {
-              className: ['octicon', 'octicon-link']
-            }
-          }
+          behavior: 'append'
         }
       ]
     ],
