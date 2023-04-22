@@ -2,7 +2,8 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import remarkToc from "remark-toc";
-import remarkCollapse from "remark-collapse";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
@@ -19,13 +20,34 @@ export default defineConfig({
   ],
   markdown: {
     remarkPlugins: [
-      remarkToc,
       [
-        remarkCollapse,
+        remarkToc,
         {
-          test: "Table of contents",
-        },
-      ],
+          heading: "目次",
+          tight: true
+        }
+      ]
+    ],
+    rehypePlugins: [
+      rehypeSlug,
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: 'prepend',
+          properties: {
+            className: ['anchor'],
+            ariaHidden: true, 
+            tabIndex: -1
+          },
+          content: {
+            type: 'element',
+            tagName: 'span',
+            properties: {
+              className: ['octicon', 'octicon-link']
+            }
+          }
+        }
+      ]
     ],
     shikiConfig: {
       theme: "one-dark-pro",

@@ -1,6 +1,6 @@
 ---
 author: こば！
-pubDatetime: 2023-03-06T00:00:00Z
+pubDatetime: 2023-04-21T16:30:00Z
 title: Amazon S3とCloudFrontで静的サイトをホスティングしたい！
 postSlug: cloudfront_to_static_website_hosted_on_s3
 image: "/images/blog/cloudfront_to_static_website_hosted_on_s3/eyecatch_cloudfront_to_static_website_hosted_on_s3"
@@ -12,12 +12,14 @@ tags:
   - CloudFront
 ogImage: ""
 description:
-  SSGで生成された静的ファイルをAmazon S3とCloudFrontでホスティングとCDN配信してみます。
+  静的WebサイトをAmazon S3とCloudFrontでホスティングとCDN配信してみます。
 ---
 
 このブログは、静的サイトジェネレーターの[Astro](https://astro.build/)をビルドすると出来上がる静的ファイルをS3にアップロード・ホストし、CloudFrontでキャッシュしつつ、ページの高速化を行なっています。
 
 そこで、この記事では、実際にローカルで作成したHTMLファイルを、S3バケットにアップロードし、CloudFrontでキャッシュされるように設定していきたいと思います。
+
+## 目次
 
 ## イメージ
 
