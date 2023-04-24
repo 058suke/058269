@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
-import remarkToc from "remark-toc";
+import rehypeToc from "@jsdevtools/rehype-toc";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import sitemap from "@astrojs/sitemap";
@@ -19,15 +19,7 @@ export default defineConfig({
     sitemap(),
   ],
   markdown: {
-    remarkPlugins: [
-      [
-        remarkToc,
-        {
-          heading: "目次",
-          tight: true
-        }
-      ]
-    ],
+    remarkPlugins: [],
     rehypePlugins: [
       rehypeSlug,
       [
@@ -45,6 +37,29 @@ export default defineConfig({
             properties: {
               className: ['octicon', 'octicon-link']
             }
+          }
+        }
+      ],
+      [
+        rehypeToc,
+        {
+          headings: ["h2", "h3"],
+          cssClasses: {
+            toc: "post-toc",
+            list: "post-toc-list"
+          },
+          customizeTOC: (toc) => {
+            const replacer = (children) => {
+              children.forEach(child => {
+                if(child.type === 'element' && child.tagName === 'ol') {
+                  child.tagName = 'ul';
+                }
+                if(child.children) {
+                  replacer(child.children);
+                }
+              });
+            };
+            replacer([toc]);
           }
         }
       ]
