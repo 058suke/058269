@@ -147,3 +147,39 @@
     @apply outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
   }
 }
+
+/* ===== table of contents ===== */
+.post-toc {
+  background-color: #f5f5f5;
+  border-radius: 6px;
+  padding: 2em;
+  margin-bottom: 2em;
+}
+
+.post-toc::before {
+  content: '目次';
+  display: block;
+  margin-bottom: 12px;
+  font-size: 1.3em;
+  font-weight: var(--base-text-weight-semibold,600);
+  border-bottom: 1px solid var(--color-border-muted);
+}
+
+.post-toc ul, .post-toc ul ul {
+  margin-bottom: 0;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.post-toc ul ul {
+  margin-top: .25em;
+  padding-left: 1em;
+}
+
+.toc-item-h2 a {
+  color: #334155;
+}
+
+.toc-item-h3 a {
+  color: #9ca3af;
+}
