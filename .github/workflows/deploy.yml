@@ -27,7 +27,7 @@ jobs:
           node-version: 16.19.0
           
       - name: Install modules
-        run: npm install
+        run: npm ci
         
       - name: Build
         run: npm run build
