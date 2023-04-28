@@ -1,9 +1,6 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
-import rehypeToc from "rehype-toc";
-import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
@@ -21,9 +18,9 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [],
     rehypePlugins: [
-      rehypeSlug,
+      "rehype-slug",
       [
-        rehypeAutolinkHeadings,
+        "rehype-autolink-headings",
         {
           behavior: 'prepend',
           properties: {
@@ -41,7 +38,7 @@ export default defineConfig({
         }
       ],
       [
-        rehypeToc,
+        "rehype-toc",
         {
           headings: ["h2", "h3"],
           cssClasses: {
