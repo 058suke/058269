@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
-import rehypeToc from "@jsdevtools/rehype-toc";
+import rehypeToc from "rehype-toc";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import sitemap from "@astrojs/sitemap";
