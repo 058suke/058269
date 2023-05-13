@@ -1,89 +1,93 @@
 ---
-import { getCollection } from "astro:content";
-import Layout from "@layouts/Layout.astro";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
-import LinkButton from "@components/LinkButton.astro";
-import Card from "@components/Card.astro";
-import getSortedPosts from "@utils/getSortedPosts";
-import slugify from "@utils/slugify";
-import { SOCIALS } from "@config";
-
-const posts = await getCollection("blog");
-const sortedPosts = getSortedPosts(posts);
+import Layout from "@layouts/AboutLayout.astro";
 ---
 
 <Layout>
-  <Header />
   <main id="main-content">
-    <section id="recent-posts">
-      <ul class="animate-slide-in-contents grid gap-y-4 gap-x-8 sm:grid-cols-2">
-        {
-          sortedPosts.map(
-            ({ data }, index) =>
-              index < 4 && (
-                <Card
-                  href={`/posts/${slugify(data)}`}
-                  frontmatter={data}
-                  secHeading={false}
-                />
-              )
-          )
-        }
-      </ul>
-      <div class="all-posts-btn-wrapper animate-slide-in-bottoms">
-        <LinkButton href="/posts">
-          All Posts
-          <svg xmlns="http://www.w3.org/2000/svg"
-            ><path
-              d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
-            ></path>
-          </svg>
-        </LinkButton>
-      </div>
+    <section id="about" class="mb-28 max-w-3xl">
+      <h1 class="text-2xl tracking-wider sm:text-3xl">I'm web app developer<br>ex-photographer.</h1>
+      <img src="./assets/me.jpg" class="me" />
+      <section class="about-me">
+        <h3>Web developer</h3>
+        <h2>Kosuke Kobayashi / 058suke</h2>  
+        <p>
+          1987年 長崎県生まれ 福岡県育ち。
+        </p>
+        <p>
+          情報工学系の大学を卒業後、販売員・フォトグラファー・社内SEの職を経て、現在はフルリモートのWebエンジニア。AWSクラウド構築、バックエンドからフロントエンドまで幅広く開発/保守を行う。
+        </p>
+      </section>
+      <section class="about-blog">
+        <h2>058269</h2>
+        <p>
+          058269は、一Webエンジニアの個人ブログです。Webアプリケーションに関する技術的な内容から個人の思考・暮らし・趣味までを記事として投稿する予定です。
+        </p>
+        <p>
+          皆さんは、何か困った時や何か決断する時に知識をインプットするかと思います。かく言う僕も仕事や私生活ではGoogle検索やSNSを通して、同じ道を通ってきた先人が残してくれたログを通して知識をインプットしている毎日です。<br>
+        </p>
+        <p>
+          <strong>誰かのアウトプットが、僕のインプットを助けてくれた。</strong><br>
+        </p>
+        <p>
+          当たり前のことですが、無意識に、日常的に誰かのアウトプットの恩恵を受けているのです。<br>
+          このブログでは幅広いトピックを取り扱いますが、僕個人のインプットや感じたことをアウトプットしたこのブログを通して、どなたかのお役に立てれば嬉しいです。
+        </p>
+      </section>
+      <section class="about-topic">
+        <h2>主な関心事</h2>
+        <h3>（2023年5月時点）</h3>
+        <ul class="about-topic-list">
+          <li>AWS</li>
+          <li>Astro</li>
+          <li>Apple製品やキーボードなどのガジェット</li>
+          <li>リモートワークを快適にするグッズ</li>
+          <li>子育て（2児の父）</li>
+          <li>シンプルな家具やインテリア（主に無印良品）</li>
+          <li>音楽（聴く専ですがロックバンド好き）</li>
+          <li>写真</li>
+        </ul>
+      </section>
     </section>
   </main>
-
-  <Footer />
 </Layout>
 
 <style>
   main {
-    @apply mx-auto w-full max-w-3xl mt-20 sm:pt-10 pb-12;
-  }
-  /* ===== Hero Section ===== */
-  #hero {
-    @apply pt-8 pb-6;
-  }
-  #hero h1 {
-    @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
-  }
-  #hero .rss-link {
-    @apply mb-6;
-  }
-  #hero .rss-icon {
-    @apply fill-skin-accent mb-2 h-6 w-6 scale-110 sm:mb-3 sm:scale-125;
-  }
-  #hero p {
-    @apply my-2;
-  }
-  .social-wrapper {
-    @apply mt-4 flex flex-col sm:flex-row sm:items-center;
-  }
-  .social-links {
-    @apply mr-2 mb-1 whitespace-nowrap sm:mb-0;
+    @apply mt-20 sm:pt-10;
   }
 
-  /* ===== Featured & Recent Posts Sections ===== */
-  #featured,
-  #recent-posts {
-    @apply pt-8 pb-6;
+  h1 {
+    /* @apply  */
   }
-  #featured h2,
-  #recent-posts h2 {
-    @apply text-2xl font-semibold tracking-wide;
+  #about p {
+    @apply mt-0 mb-4 text-skin-gray;
   }
-  .all-posts-btn-wrapper {
-    @apply my-8 text-center;
+  ul.about-topic-list {
+    @apply list-disc pl-4;
+  }
+
+  .me {
+    @apply mt-10;
+  }
+
+  .about-me, 
+  .about-blog,
+  .about-topic {
+    @apply mt-5 mb-10;
+  }
+  .about-me h3 {
+    @apply text-sm text-center;
+  }
+  .about-me h2 {
+    @apply mb-5 text-lg text-center font-semibold;
+  }
+  .about-blog h2 {
+    @apply my-4 text-lg text-center font-semibold;
+  }
+  .about-topic h2 {
+    @apply mt-4 text-lg text-center font-semibold;
+  }
+  .about-topic h3 {
+    @apply mb-4 text-sm text-center;
   }
 </style>
