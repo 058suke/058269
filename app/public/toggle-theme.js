@@ -32,7 +32,7 @@ function reflectPreference() {
 // set early so no page flashes / CSS is made aware
 reflectPreference();
 
-window.onload = () => {
+window.addEventListener('load', () => {
   // set on load so screen readers can get the latest value on the button
   reflectPreference();
 
@@ -43,7 +43,7 @@ window.onload = () => {
     console.log('is light or dark?');
     setPreference();
   });
-};
+});
 
 // sync with system changes
 window

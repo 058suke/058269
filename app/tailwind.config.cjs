@@ -32,6 +32,7 @@ module.exports = {
     backgroundColor: {
       skin: {
         fill: withOpacity("--color-fill"),
+        fillGray: withOpacity("--color-fill-gray"),
         accent: withOpacity("--color-accent"),
         inverted: withOpacity("--color-text-base"),
         card: withOpacity("--color-card"),
@@ -65,7 +66,7 @@ module.exports = {
       animation: {
         "slide-in-title": "slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both",
         "slide-in-subtitle": "slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)  both",
-        "slide-in-tag": "slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)  both",
+        "slide-in-tag": "slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both",
         "slide-in-image": "slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s both",
         "slide-in-article": "slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.6s both",
         "slide-in-contents": "slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s both",
