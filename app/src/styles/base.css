@@ -14,6 +14,10 @@
     --color-card-muted: 205, 205, 205;
     --color-border: 236, 233, 233;
     --color-nav-hover: 250, 204, 21;
+    --color-fill-toc: 245, 245, 245;
+    --color-toc-border: 216, 222, 228;
+    --color-toc-h2: 51, 65, 85;
+    --color-toc-h3:	156, 163, 175;
   }
   html[data-theme="dark"] {
     --color-fill: 13, 17, 23;
@@ -25,6 +29,10 @@
     --color-card-muted: 138, 51, 2;
     --color-border: 230, 230, 230;
     --color-nav-hover: 248, 113, 113;
+    --color-fill-toc: 45, 45, 45;
+    --color-toc-border: 116, 122, 128;
+    --color-toc-h2: 201, 215, 235;
+    --color-toc-h3:	136, 143, 155;
   }
   #sun-svg,
   html[data-theme="dark"] #moon-svg {
@@ -161,7 +169,7 @@
 
 /* ===== table of contents ===== */
 .post-toc {
-  background-color: #f5f5f5;
+  background-color: rgb(var(--color-fill-toc));
   border-radius: 6px;
   padding: 2em;
   margin-bottom: 2em;
@@ -173,7 +181,7 @@
   margin-bottom: 12px;
   font-size: 1.3em;
   font-weight: var(--base-text-weight-semibold,600);
-  border-bottom: 1px solid var(--color-border-muted);
+  border-bottom: 1px solid rgb(var(--color-toc-border));
 }
 
 .post-toc ul, .post-toc ul ul {
@@ -188,11 +196,11 @@
 }
 
 .toc-item-h2 a {
-  color: #334155;
+  color: rgb(var(--color-toc-h2));
 }
 
 .toc-item-h3 a {
-  color: #9ca3af;
+  color: rgb(var(--color-toc-h3));
 }
 .nav-container.open .logo svg {
   fill: rgb(var(--color-fill));
