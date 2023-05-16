@@ -34,6 +34,15 @@
   html[data-theme="dark"] #sun-svg {
     display: block;
   }
+  html {
+    @apply scroll-smooth;
+    scroll-padding-top: 5rem;
+  }
+  @media screen and (min-width: 640px) {
+    html {
+      scroll-padding-top: 6rem;
+    }
+  }
   body {
     @apply relative flex min-h-screen flex-col bg-skin-fill font-mono text-skin-base 
     selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
