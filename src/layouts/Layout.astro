@@ -1,5 +1,6 @@
 ---
 import { SITE } from "@config";
+import { ViewTransitions } from 'astro:transitions';
 import "../styles/github-markdown-custom.min.css";
 import "../styles/base.css";
 
@@ -77,6 +78,7 @@ const fallbackImageURL = new URL(SITE.ogImage, Astro.url.origin).href;
         ? fallbackImageURL
         : socialImageURL}
     />
+    <ViewTransitions />
 
     <!-- Adobe Fonts -->
     <script>
