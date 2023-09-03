@@ -24,14 +24,13 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.19.0
+          node-version: 18.17.1
           
       - name: Install modules
         run: npm ci
         
       - name: Build
         run: npm run build
-        working-directory: ./app
         
       - name: Configure AWS Credenrtials
         uses: aws-actions/configure-aws-credentials@v1
@@ -43,7 +42,6 @@ jobs:
       - name: Deploy to S3
         run: |
           aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}
-        working-directory: ./app
           
       - name: CloudFront Cache Clear
         run: |
