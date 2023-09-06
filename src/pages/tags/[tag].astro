@@ -1,7 +1,6 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
-import Main from "@layouts/Main.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import Card from "@components/Card.astro";
@@ -37,10 +36,9 @@ const tagPosts = getPostsByTag(posts, tag);
 
 <Layout title={`Tag:${tag} | ${SITE.title}`}>
   <Header />
-  <Main
-    pageTitle={`#${tag}`}
-    pageDesc={`#${tag} のタグがついている記事 ${tagPosts.length}件`}
-  >
+  <main id="main-content">
+    <h1 class="animate-slide-in-title">{`#${tag}`}</h1>
+    <p class="animate-slide-in-subtitle">{`#${tag} のタグがついている記事 ${tagPosts.length}件`}</p>
     <ul class="animate-slide-in-contents grid gap-y-4 gap-x-8 sm:grid-cols-2">
       {
         tagPosts.map(({ data }) => (
@@ -48,6 +46,21 @@ const tagPosts = getPostsByTag(posts, tag);
         ))
       }
     </ul>
-  </Main>
+  </main>
   <Footer />
 </Layout>
+
+<style>
+  main {
+    @apply mx-auto mt-20 w-full max-w-3xl px-4 pb-12 sm:mt-20 sm:pt-10;
+  }
+  #main-content {
+    @apply mx-auto w-full max-w-3xl px-4 pb-12;
+  }
+  #main-content h1 {
+    @apply text-2xl font-semibold;
+  }
+  #main-content p {
+    @apply mt-2 mb-6 text-sm opacity-80;
+  }
+</style>
