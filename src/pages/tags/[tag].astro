@@ -34,7 +34,7 @@ const posts = await getCollection("blog", ({ data }) => !data.draft);
 const tagPosts = getPostsByTag(posts, tag);
 ---
 
-<Layout title={`Tag:${tag} | ${SITE.title}`}>
+<Layout title={`「${tag}」の記事一覧 | ${SITE.title}`}>
   <Header />
   <main id="main-content">
     <h1 class="animate-slide-in-title">{`#${tag}`}</h1>

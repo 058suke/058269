@@ -16,7 +16,7 @@ const { name, size = "sm" } = Astro.props;
     href={`/tags/${name.toLowerCase()}`}
     class={`${size === "sm" ? "text-sm" : "text-lg"} pr-2 group`}
   >
-    <span>#{name.toLowerCase()}</span>
+    <span>#{name}</span>
   </a>
 </li>
 
