@@ -11,13 +11,6 @@ export const SITE = {
   favicon: "./assets/058269favicon.png"
 };
 
-export const LOGO_IMAGE = {
-  enable: true,
-  svg: false,
-  width: 100,
-  height: 100,
-};
-
 export const SOCIALS: SocialObjects = [
   {
     name: "Github",
